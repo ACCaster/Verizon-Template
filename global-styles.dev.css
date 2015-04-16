@@ -1,0 +1,531 @@
+/* This sets up our pages for using base 10 font sizing using rems with fallbacks for older browsers. */
+html{font-size:62.5%;}
+/* Styles body font to 14px for fallback on browsers that don't support rem. 1.4 rem = 14px on base 10 system. */
+body{font-size:14px;font-size:1.4rem;font-family:Arial,Helvetica,sans-serif;padding:0;margin:0;}
+
+/*	=============================================================================
+   	Global Wrappers - added 03/06/2014
+   	========================================================================== */
+
+.lp-marquee-wrap,.lp-section-wrap{min-width:984px;overflow:hidden;}
+.lp-marquee-wrap .col12-box,.lp-section-wrap .col12-box{margin:0 auto;}
+
+
+/*	=============================================================================
+	Verizon Color Palettes
+
+	Primary Colors:
+		Verizon Red: 			#ed1c24;
+
+	Secondary Colors:
+		Verizon Black:			#333;
+		Verizon Dark Grey: 		#595a5d;
+		Verizon Grey:			#d2d3d4;
+		Verizon Light Grey:		#ecedee;
+		White:					#fff;
+		Black:					#000;
+
+	Tertiary Colors:
+		Teal:					#73b9b0;
+		Dark Teal:				#3195a9;
+		Off-White:				#eef1f9;
+		Yellow:					#fadf4c;
+		Green:					#4a9a4d;
+		Blue:					#3b73b0;
+		Gold:					#c49f39;
+		Ash-Brown:				#9f9797;
+		Pink:					#d2669f;
+		Purple:					#7f3483;
+
+	Gradients:
+		Grey:					Top: #fff; - Bottom: #ccc;
+		Red:					Top: #ed1c24; - Bottom: #c0171d;
+   	========================================================================== */
+
+
+/* Temporary fix added to undo changes made to https://scache.vzw.com/stylesheets/explore.css on 1/7, need to follow up on 1/10 and remove once changes to explore.css have been undone */
+.red-bg p{color:#fff;}
+/* Flat Backgrounds */
+.red-bg{color:#fff;background:#ed1c24;} 
+.grey-bg,.gray-bg{background:#d2d3d4;}
+.dark-grey-bg,.dark-gray-bg{color:#fff;background:#595a5d;}
+.light-grey-bg,.light-gray-bg{background:#ecedee;}
+.white-bg{background:#fff;}
+.black-bg{background:#000;}
+
+/* Gradient Backgrounds */
+.gradient-grey-bg,.gradient-gray-bg{background:#ffffff;background:-moz-linear-gradient(top, #ffffff 0%, #cccccc 100%);background:-webkit-gradient(left top, left bottom, color-stop(0%, #ffffff), color-stop(100%, #cccccc));background:-webkit-linear-gradient(top, #ffffff 0%, #cccccc 100%);background:-o-linear-gradient(top, #ffffff 0%, #cccccc 100%);background:-ms-linear-gradient(top, #ffffff 0%, #cccccc 100%);background:linear-gradient(to bottom, #ffffff 0%, #cccccc 100%);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ffffff', endColorstr='#cccccc', GradientType=0);}
+.gradient-red-bg{background:#ed1c24;background:-moz-linear-gradient(top, #ed1c24 0%, #c0171d 100%);background:-webkit-gradient(left top, left bottom, color-stop(0%, #ed1c24), color-stop(100%, #c0171d));background:-webkit-linear-gradient(top, #ed1c24 0%, #c0171d 100%);background:-o-linear-gradient(top, #ed1c24 0%, #c0171d 100%);background:-ms-linear-gradient(top, #ed1c24 0%, #c0171d 100%);background:linear-gradient(to bottom, #ed1c24 0%, #c0171d 100%);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed1c24', endColorstr='#c0171d', GradientType=0);}
+
+
+
+/*	=============================================================================
+   	Tiles
+   	========================================================================== */
+
+.tilesWrap{width:100%;min-width:984px;padding:0;overflow:hidden;}
+/* New styles introduced to add box-sizing and expedite development - added 03/06/2014 */
+.tilesWrap .tile-content{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
+.tilesWrap .tile{height:100%;} /* When the height of .tilesWrap is set, these will automatically expand to the full height of the container */
+
+/* 3-9 - added 03/06/2014 */
+.tiles3-9 .tile{float:left;overflow:hidden;}
+.tiles3-9 .leftTile{width:50%;min-width:246px;}
+.tiles3-9 .rightTile{width:50%;min-width:492px;position:relative;/* z-index:10; */margin-left:-246px;padding-right:246px;}
+.tiles3-9 .leftTile .tile-content{width:246px;padding:30px 30px 30px 0;margin-right:246px;float:right;}
+.tiles3-9 .rightTile .tile-content{width:738px;padding:30px 0 30px 30px;float:left;}
+
+/* 4-4-4 */
+.tiles4-4-4 .tile{float:left;overflow:hidden;}
+.tiles4-4-4 .centerTile{width:268px;padding:30px;position:relative;/* z-index:10; */}
+.tiles4-4-4 .leftTile{width:50%;min-width:328px;margin-right:-164px;}
+.tiles4-4-4 .rightTile{width:50%;min-width:328px;margin-left:-164px;}
+.tiles4-4-4 .leftTile .tileContent,.tiles4-4-4 .rightTile .tileContent{width:298px;}
+.tiles4-4-4 .leftTile .tileContent{padding:30px 0;margin-right:194px;float:right;}
+.tiles4-4-4 .rightTile .tileContent{padding:30px 0;margin-left:194px;float:left;}
+/* New styles introduced to add box-sizing and expedite development - added 03/06/2014 */
+.tiles4-4-4 .center-tile{width:328px;padding:30px;position:relative;/* z-index:10; */}
+.tiles4-4-4 .leftTile .tile-content,.tiles4-4-4 .rightTile .tile-content{width:328px;}
+.tiles4-4-4 .leftTile .tile-content{padding:30px 30px 30px 0;margin-right:164px;float:right;}
+.tiles4-4-4 .rightTile .tile-content{padding:30px 0 30px 30px;margin-left:164px;float:left;}
+
+/* 4-8 */
+.tiles4-8 .tile{float:left;overflow:hidden;}
+.tiles4-8 .leftTile{width:50%;min-width:328px;}
+.tiles4-8 .rightTile{width:50%;min-width:492px;position:relative;/* z-index:10; */margin-left:-164px;padding-right:164px;}
+.tiles4-8 .leftTile .tileContent{width:298px;padding:30px 30px 30px 0;margin-right:164px;float:right;}
+.tiles4-8 .rightTile .tileContent{width:626px;padding:30px 0 30px 30px;float:left;}
+/* New styles introduced to add box-sizing and expedite development - added 03/06/2014 */
+.tiles4-8 .leftTile .tile-content{width:328px;padding:30px 30px 30px 0;margin-right:164px;float:right;}
+.tiles4-8 .rightTile .tile-content{width:656px;padding:30px 0 30px 30px;float:left;}
+
+/* 5-7 */
+.tiles5-7 .tile{float:left;overflow:hidden;}
+.tiles5-7 .leftTile{width:50%;min-width:410px;}
+.tiles5-7 .rightTile{width:50%;min-width:492px;position:relative;/* z-index:10; */margin-left:-82px;padding-right:82px;}
+.tiles5-7 .leftTile .tileContent{width:380px;padding:30px 30px 30px 0;margin-right:82px;float:right;}
+.tiles5-7 .rightTile .tileContent{width:544px;padding:30px 0 30px 30px;float:left;}
+/* New styles introduced to add box-sizing and expedite development - added 03/06/2014 */
+.tiles5-7 .leftTile .tile-content{width:410px;padding:30px 30px 30px 0;margin-right:82px;float:right;}
+.tiles5-7 .rightTile .tile-content{width:574px;padding:30px 0 30px 30px;float:left;}
+
+/* 6-6 */
+.tiles6-6 .tile{width:50%;float:left;}
+.tiles6-6 .leftTile .tileContent{width:462px;padding:30px 30px 30px 0;float:right;}
+.tiles6-6 .rightTile .tileContent{width:462px;padding:30px 0 30px 30px;float:left;}
+/* New styles introduced to add box-sizing and expedite development - added 03/06/2014 */
+.tiles6-6 .leftTile .tile-content{width:492px;padding:30px 30px 30px 0;float:right;}
+.tiles6-6 .rightTile .tile-content{width:492px;padding:30px 0 30px 30px;float:left;}
+
+/* 7-5 */
+.tiles7-5 .tile{float:left;overflow:hidden;}
+.tiles7-5 .leftTile{width:50%;min-width:492px;position:relative;/* z-index:10; */margin-right:-82px;padding-left:82px;}
+.tiles7-5 .rightTile{width:50%;min-width:410px;}
+.tiles7-5 .leftTile .tileContent{width:544px;padding:30px 30px 30px 0;float:right;}
+.tiles7-5 .rightTile .tileContent{width:380px;padding:30px 0 30px 30px;margin-left:82px;float:left;}
+/* New styles introduced to add box-sizing and expedite development - added 03/06/2014 */
+.tiles7-5 .leftTile .tile-content{width:574px;padding:30px 30px 30px 0;float:right;}
+.tiles7-5 .rightTile .tile-content{width:410px;padding:30px 0 30px 30px;margin-left:82px;float:left;}
+
+/* 8-4 */
+.tiles8-4 .tile{float:left;overflow:hidden;}
+.tiles8-4 .leftTile{width:50%;min-width:492px;position:relative;/* z-index:10; */margin-right:-164px;padding-left:164px;}
+.tiles8-4 .rightTile{width:50%;min-width:328px;}
+.tiles8-4 .leftTile .tileContent{width:626px;padding:30px 30px 30px 0;float:right;}
+.tiles8-4 .rightTile .tileContent{width:298px;padding:30px 0 30px 30px;margin-left:164px;float:left;}
+/* New styles introduced to add box-sizing and expedite development - added 03/06/2014 */
+.tiles8-4 .leftTile .tile-content{width:656px;padding:30px 30px 30px 0;float:right;}
+.tiles8-4 .rightTile .tile-content{width:328px;padding:30px 0 30px 30px;margin-left:164px;float:left;}
+
+/* 9-3 - added 03/06/2014 */
+.tiles9-3 .tile{float:left;overflow:hidden;}
+.tiles9-3 .leftTile{width:50%;min-width:492px;position:relative;/* z-index:10; */margin-right:-246px;padding-left:246px;}
+.tiles9-3 .rightTile{width:50%;min-width:246px;}
+.tiles9-3 .leftTile .tile-content{width:738px;padding:30px 30px 30px 0;float:right;}
+.tiles9-3 .rightTile .tile-content{width:246px;padding:30px 0 30px 30px;margin-left:246px;float:left;}
+
+
+/*	=============================================================================
+   	Grid
+   	========================================================================== */
+
+.col1{width:82px;}
+.col2{width:164px;}
+.col3{width:246px;}
+.col4{width:328px;}
+.col5{width:410px;}
+.col6{width:492px;}
+.col7{width:574px;}
+.col8{width:656px;}
+.col9{width:738px;}
+.col10{width:820px;}
+.col11{width:902px;}
+.col12{width:984px;}
+
+/* New styles introduced on 03/04/14 to replace grid classes above and introduce border-box to all definitions - added 03/06/2014 */
+.col1-box,.col2-box,.col3-box,.col4-box,.col5-box,.col6-box,.col7-box,.col8-box,.col9-box,.col10-box,.col11-box,.col12-box{-webkit-box-sizing:border-box;-moz-box-sizing:border-box;-ms-box-sizing:border-box;box-sizing:border-box;}
+.col1-box{width:82px;}
+.col2-box{width:164px;}
+.col3-box{width:246px;}
+.col4-box{width:328px;}
+.col5-box{width:410px;}
+.col6-box{width:492px;}
+.col7-box{width:574px;}
+.col8-box{width:656px;}
+.col9-box{width:738px;}
+.col10-box{width:820px;}
+.col11-box{width:902px;}
+.col12-box{width:984px;}
+
+/* New padding classes introduced to speed up dev - added 03/06/2014 */
+/* Padding Left */
+.pad-left-1col,.tilesWrap .tile-content.pad-left-1col{padding-left:82px;}
+.pad-left-2col,.tilesWrap .tile-content.pad-left-2col{padding-left:164px;}
+.pad-left-3col,.tilesWrap .tile-content.pad-left-3col{padding-left:246px;}
+.pad-left-4col,.tilesWrap .tile-content.pad-left-4col{padding-left:328px;}
+.pad-left-5col,.tilesWrap .tile-content.pad-left-5col{padding-left:410px;}
+.pad-left-6col,.tilesWrap .tile-content.pad-left-6col{padding-left:492px;}
+.pad-left-7col,.tilesWrap .tile-content.pad-left-7col{padding-left:574px;}
+.pad-left-8col,.tilesWrap .tile-content.pad-left-8col{padding-left:656px;}
+.pad-left-9col,.tilesWrap .tile-content.pad-left-9col{padding-left:738px;}
+.pad-left-10col,.tilesWrap .tile-content.pad-left-10col{padding-left:820px;}
+.pad-left-11col,.tilesWrap .tile-content.pad-left-11col{padding-left:902px;}
+.pad-left-12col,.tilesWrap .tile-content.pad-left-12col{padding-left:984px;}
+/* Padding Right */
+.pad-right-1col,.tilesWrap .tile-content.pad-right-1col{padding-right:82px;}
+.pad-right-2col,.tilesWrap .tile-content.pad-right-2col{padding-right:164px;}
+.pad-right-3col,.tilesWrap .tile-content.pad-right-3col{padding-right:246px;}
+.pad-right-4col,.tilesWrap .tile-content.pad-right-4col{padding-right:328px;}
+.pad-right-5col,.tilesWrap .tile-content.pad-right-5col{padding-right:410px;}
+.pad-right-6col,.tilesWrap .tile-content.pad-right-6col{padding-right:492px;}
+.pad-right-7col,.tilesWrap .tile-content.pad-right-7col{padding-right:574px;}
+.pad-right-8col,.tilesWrap .tile-content.pad-right-8col{padding-right:656px;}
+.pad-right-9col,.tilesWrap .tile-content.pad-right-9col{padding-right:738px;}
+.pad-right-10col,.tilesWrap .tile-content.pad-right-10col{padding-right:820px;}
+.pad-right-11col,.tilesWrap .tile-content.pad-right-11col{padding-right:902px;}
+.pad-right-12col,.tilesWrap .tile-content.pad-right-12col{padding-right:984px;}
+
+
+/*	=============================================================================
+   	Import Fonts
+   	========================================================================== */
+
+/* Icons
+@font-face{font-family:'vzwIcons';src:url('//www.verizonwireless.com/gng/fonts/vzw-iconfont.eot');src:url('//www.verizonwireless.com/gng/fonts/vzw-iconfont.eot?#iefix') format('embedded-opentype'), url('//www.verizonwireless.com/gng/fonts/vzw-iconfont.woff') format('woff'), url('//www.verizonwireless.com/gng/fonts/vzw-iconfont.ttf') format('truetype'), url('//www.verizonwireless.com/gng/fonts/vzw-iconfont.svg#vzwIcons') format('svg');font-weight:normal;font-style:normal;}
+ *//* Looks for data-icon attribute and populates icon. Use classes insted */
+[data-icon]:before{font-family:'vzwIcons';content:attr(data-icon);speak:none;font-weight:normal;font-variant:normal;text-transform:none;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale;display:inline;}
+[class*="icon-"] {font-family:'vzwIcons';speak:none;font-style: normal;font-weight:normal;font-variant:normal;text-transform:none;line-height:1;-webkit-font-smoothing: antialiased;-moz-osx-font-smoothing:grayscale;}
+.icon-talk-text:before{content:"\e600";}
+.icon-plan-changes:before{content:"\e601";}
+.icon-down-arrow-bracket:before{content:"\e602";}
+.icon-down-arrow-bracket-2:before{content:"\e603";}
+.icon-arrow-right:before{content:"\e0b7";}
+.icon-work:before{content:"\e000";}
+.icon-wishlist:before{content:"\e001";}
+.icon-tv:before{content:"\e002";}
+.icon-student:before{content:"\e003";}
+.icon-sports:before{content:"\e004";}
+.icon-speakerphone:before{content:"\e005";}
+.icon-sharing:before{content:"\e006";}
+.icon-seasonal:before{content:"\e007";}
+.icon-ringtone:before{content:"\e008";}
+.icon-reward:before{content:"\e009";}
+.icon-reading:before{content:"\e00a";}
+.icon-questions-answers:before{content:"\e00b";}
+.icon-power-user:before{content:"\e00c";}
+.icon-plan:before{content:"\e00e";}
+.icon-photo:before{content:"\e00f";}
+.icon-photo-video:before{content:"\e010";}
+.icon-outdoor:before{content:"\e011";}
+.icon-music:before{content:"\e012";}
+.icon-movies:before{content:"\e013";}
+.icon-menu:before{content:"\e015";}
+.icon-memory-size:before{content:"\e016";}
+.icon-map:before{content:"\e017";}
+.icon-mailbox:before{content:"\e018";}
+.icon-luxury:before{content:"\e019";}
+.icon-internet:before{content:"\e01a";}
+.icon-info:before{content:"\e01b";}
+.icon-health-wellness:before{content:"\e01c";}
+.icon-game:before{content:"\e01d";}
+.icon-food:before{content:"\e01e";}
+.icon-fitness:before{content:"\e01f";}
+.icon-finance:before{content:"\e020";}
+.icon-file:before{content:"\e021";}
+.icon-featured:before{content:"\e022";}
+.icon-family:before{content:"\e023";}
+.icon-early-adopter:before{content:"\e024";}
+.icon-customer-support:before{content:"\e025";}
+.icon-computer:before{content:"\e026";}
+.icon-commute:before{content:"\e027";}
+.icon-call-log:before{content:"\e028";}
+.icon-calendar:before{content:"\e029";}
+.icon-bookmark:before{content:"\e02a";}
+.icon-bill:before{content:"\e02b";}
+.icon-anywhere-office:before{content:"\e02c";}
+.icon-alert:before{content:"\e02d";}
+.icon-wireless:before{content:"\e02e";}
+.icon-wireless-inv:before{content:"\e02f";}
+.icon-wifi-enabled:before{content:"\e030";}
+.icon-wifi-enabled-inv:before{content:"\e031";}
+.icon-weight:before{content:"\e032";}
+.icon-waterproof:before{content:"\e033";}
+.icon-user:before{content:"\e034";}
+.icon-trending:before{content:"\e035";}
+.icon-travel:before{content:"\e036";}
+.icon-thumbs-up:before{content:"\e037";}
+.icon-thumbs-down:before{content:"\e038";}
+.icon-temperature:before{content:"\e039";}
+.icon-sync:before{content:"\e03a";}
+.icon-sync-inv:before{content:"\e03b";}
+.icon-standby-life:before{content:"\e03c";}
+.icon-sound-quality:before{content:"\e03d";}
+.icon-sound-quality-inv:before{content:"\e03e";}
+.icon-smart-accessory:before{content:"\e03f";}
+.icon-smart-accessory-inv:before{content:"\e040";}
+.icon-size:before{content:"\e041";}
+.icon-shipping-box:before{content:"\e042";}
+.icon-search:before{content:"\e043";}
+.icon-printer:before{content:"\e044";}
+.icon-power:before{content:"\e045";}
+.icon-portable:before{content:"\e046";}
+.icon-phone:before{content:"\e047";}
+.icon-pagination-round:before{content:"\e048";}
+.icon-page-right:before{content:"\e049";}
+.icon-page-left:before{content:"\e04a";}
+.icon-noise-cancel:before{content:"\e04b";}
+.icon-noise-cancel_inv:before{content:"\e04c";}
+.icon-message-chat:before{content:"\e04d";}
+.icon-memory-size2:before{content:"\e04e";}
+.icon-mail:before{content:"\e04f";}
+.icon-lens:before{content:"\e050";}
+.icon-lens-inv:before{content:"\e051";}
+.icon-international:before{content:"\e052";}
+.icon-international-inv:before{content:"\e053";}
+.icon-home-wifi:before{content:"\e054";}
+.icon-gps:before{content:"\e055";}
+.icon-gps-inv:before{content:"\e056";}
+.icon-games:before{content:"\e057";}
+.icon-free-shipping:before{content:"\e058";}
+.icon-fitness-health:before{content:"\e059";}
+.icon-fashion-style:before{content:"\e05a";}
+.icon-eco-friendly:before{content:"\e05b";}
+.icon-eco-friendly-inv:before{content:"\e05c";}
+.icon-data-plan:before{content:"\e05d";}
+.icon-data-plan-inv:before{content:"\e05e";}
+.icon-customizable:before{content:"\e05f";}
+.icon-customizable_inv:before{content:"\e060";}
+.icon-connectivity:before{content:"\e061";}
+.icon-close:before{content:"\e062";}
+.icon-close-circle:before{content:"\e063";}
+.icon-charging:before{content:"\e064";}
+.icon-cart:before{content:"\e065";}
+.icon-bluetooth:before{content:"\e066";}
+.icon-bluetooth-inv:before{content:"\e067";}
+.icon-battery-100:before{content:"\e068";}
+.icon-battery-75:before{content:"\e069";}
+.icon-battery-50:before{content:"\e06a";}
+.icon-battery-25:before{content:"\e06b";}
+.icon-battery-10:before{content:"\e06c";}
+.icon-battery-0:before{content:"\e06d";}
+.icon-audio-video:before{content:"\e06e";}
+.icon-app-enabled:before{content:"\e06f";}
+.icon-app-enabled-inv:before{content:"\e070";}
+.icon-amplify:before{content:"\e071";}
+.icon-home:before{content:"\e073";}
+.icon-star:before{content:"\e074";}
+.icon-star2:before{content:"\e075";}
+.icon-star3:before{content:"\e076";}
+.icon-minus:before{content:"\e077";}
+.icon-plus:before{content:"\e078";}
+.icon-enter:before{content:"\e079";}
+.icon-exit:before{content:"\e07a";}
+.icon-play:before{content:"\e07b";}
+.icon-pause:before{content:"\e07c";}
+.icon-stop:before{content:"\e07d";}
+.icon-backward:before{content:"\e07e";}
+.icon-forward:before{content:"\e07f";}
+.icon-first:before{content:"\e080";}
+.icon-last:before{content:"\e081";}
+.icon-previous:before{content:"\e082";}
+.icon-next:before{content:"\e083";}
+.icon-eject:before{content:"\e084";}
+.icon-checkbox-checked:before{content:"\e085";}
+.icon-checkbox-unchecked:before{content:"\e086";}
+.icon-checkbox-partial:before{content:"\e087";}
+.icon-radio-checked:before{content:"\e088";}
+.icon-radio-unchecked:before{content:"\e089";}
+.icon-google:before{content:"\e08a";}
+.icon-google-plus:before{content:"\e08b";}
+.icon-google-plus2:before{content:"\e08c";}
+.icon-facebook:before{content:"\e08d";}
+.icon-facebook2:before{content:"\e08e";}
+.icon-twitter:before{content:"\e08f";}
+.icon-twitter2:before{content:"\e090";}
+.icon-twitter3:before{content:"\e091";}
+.icon-facebook3:before{content:"\e092";}
+.icon-google-plus3:before{content:"\e093";}
+.icon-instagram:before{content:"\e094";}
+.icon-youtube:before{content:"\e095";}
+.icon-youtube2:before{content:"\e096";}
+.icon-tux:before{content:"\e072";}
+.icon-apple:before{content:"\e097";}
+.icon-finder:before{content:"\e098";}
+.icon-android:before{content:"\e099";}
+.icon-windows:before{content:"\e09a";}
+.icon-windows8:before{content:"\e09b";}
+.icon-chrome:before{content:"\e09c";}
+.icon-firefox:before{content:"\e09d";}
+.icon-IE:before{content:"\e0a1";}
+.icon-opera:before{content:"\e0a2";}
+.icon-safari:before{content:"\e0a3";}
+.icon-pinterest:before{content:"\e0a4";}
+.icon-pinterest2:before{content:"\e0a5";}
+.icon-checkmark:before{content:"\e0a6";}
+.icon-checkmark2:before{content:"\e0a7";}
+.icon-checkmark-circle:before{content:"\e0a8";}
+.icon-spinner:before{content:"\e0a9";}
+.icon-cog:before{content:"\e00d";}
+.icon-arrow-down:before{content:"\e014";}
+.icon-unlocked:before{content:"\e09e";}
+.icon-lock:before{content:"\e09f";}
+.icon-tag:before{content:"\e0a0";}
+.icon-tablet:before{content:"\e0aa";}
+.icon-mobile:before{content:"\e0ab";}
+.icon-file-pdf:before{content:"\e0ac";}
+.icon-arrow-left:before{content:"\e0ad";}
+.icon-arrow-up:before{content:"\e0ae";}
+.icon-arrow-right-bracket:before{content:"\e0af";}
+.icon-zoom-in:before{content:"\e0b0";}
+.icon-zoom-out:before{content:"\e0b1";}
+.icon-expand:before{content:"\e0b2";}
+.icon-contract:before{content:"\e0b3";}
+.icon-download:before{content:"\e0b4";}
+.icon-tooltip:before{content:"\e0b5";}
+/* Verizon Apex Light
+@font-face{font-family:"VerizonApexLight";src:url('//www.verizonwireless.com/gng/fonts/VerizonApex-Light.eot');src:url('//www.verizonwireless.com/gng/fonts/VerizonApex-Light.eot?#iefix') format('eot'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-Light.woff') format('woff'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-Light.ttf') format('truetype'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-Light.svg') format('svg');font-weight:normal;font-style:normal;}
+@font-face{font-family:"VerizonApexLightItalic";src:url('//www.verizonwireless.com/gng/fonts/VerizonApex-LightItalic.eot');src:url('//www.verizonwireless.com/gng/fonts/VerizonApex-LightItalic.eot?#iefix') format('eot'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-LightItalic.woff') format('woff'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-LightItalic.ttf') format('truetype'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-LightItalic.svg') format('svg');font-weight:normal;font-style:normal;}
+ *//* Verizon Apex
+@font-face{font-family:"VerizonApexBook";src:url('//www.verizonwireless.com/gng/fonts/VerizonApex-Book.eot');src:url('//www.verizonwireless.com/gng/fonts/VerizonApex-Book.eot?#iefix') format('eot'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-Book.woff') format('woff'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-Book.ttf') format('truetype'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-Book.svg') format('svg');font-weight:normal;font-style:normal;}
+@font-face{font-family:"VerizonApexBookItalic";src:url('//www.verizonwireless.com/gng/fonts/VerizonApex-BookItalic.eot');src:url('//www.verizonwireless.com/gng/fonts/VerizonApex-BookItalic.eot?#iefix') format('eot'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-BookItalic.woff') format('woff'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-BookItalic.ttf') format('truetype'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-BookItalic.svg') format('svg');font-weight:normal;font-style:normal;}
+ *//* Verizon Apex Medium
+@font-face{font-family:"VerizonApexMedium";src:url('//www.verizonwireless.com/gng/fonts/VerizonApex-Medium.eot');src:url('//www.verizonwireless.com/gng/fonts/VerizonApex-Medium.eot?#iefix') format('eot'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-Medium.woff') format('woff'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-Medium.ttf') format('truetype'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-Medium.svg') format('svg');font-weight:normal;font-style:normal;}
+@font-face{font-family:"VerizonApexMediumItalic";src:url('//www.verizonwireless.com/gng/fonts/VerizonApex-MediumItalic.eot');src:url('//www.verizonwireless.com/gng/fonts/VerizonApex-MediumItalic.eot?#iefix') format('eot'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-MediumItalic.woff') format('woff'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-MediumItalic.ttf') format('truetype'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-MediumItalic.svg') format('svg');font-weight:normal;font-style:normal;}
+ *//* Verizon Apex Bold
+@font-face{font-family:"VerizonApexBold";src:url('//www.verizonwireless.com/gng/fonts/VerizonApex-Bold.eot');src:url('//www.verizonwireless.com/gng/fonts/VerizonApex-Bold.eot?#iefix') format('eot'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-Bold.woff') format('woff'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-Bold.ttf') format('truetype'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-Bold.svg') format('svg');font-weight:normal;font-style:normal;}
+@font-face{font-family:"VerizonApexBoldItalic";src:url('//www.verizonwireless.com/gng/fonts/VerizonApex-BoldItalic.eot');src:url('//www.verizonwireless.com/gng/fonts/VerizonApex-BoldItalic.eot?#iefix') format('eot'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-BoldItalic.woff') format('woff'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-BoldItalic.ttf') format('truetype'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-BoldItalic.svg') format('svg');font-weight:normal;font-style:normal;}
+ *//* Verizon Apex Extra Bold
+@font-face{font-family:"VerizonApexExtrabold";src:url('//www.verizonwireless.com/gng/fonts/VerizonApex-Extrabold.eot');src:url('//www.verizonwireless.com/gng/fonts/VerizonApex-Extrabold.eot?#iefix') format('eot'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-Extrabold.woff') format('woff'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-Extrabold.ttf') format('truetype'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-Extrabold.svg') format('svg');font-weight:normal;font-style:normal;}
+@font-face{font-family:"VerizonApexExtraboldItalic";src:url('//www.verizonwireless.com/gng/fonts/VerizonApex-ExtraboldItalic.eot');src:url('//www.verizonwireless.com/gng/fonts/VerizonApex-ExtraboldItalic.eot?#iefix') format('eot'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-ExtraboldItalic.woff') format('woff'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-ExtraboldItalic.ttf') format('truetype'), url('//www.verizonwireless.com/gng/fonts/VerizonApex-ExtraboldItalic.svg') format('svg');font-weight:normal;font-style:normal;}
+ */
+
+/*	=============================================================================
+   	Form Elements
+   	========================================================================== */
+
+.textbox{color:#d2d3d4;font-size:15px;font-size:1.5rem;font-family:'VerizonApexBook',arial,helvetica,sans-serif;background-color:#fff;border:1px solid #d2d3d4;-webkit-border-radius:5px;-moz-border-radius:5px;border-radius:5px;line-height:1em;padding:11px 10px;display:inline-block;}
+.textbox:hover,.textbox:active,.textbox:focus{color:#6d6e71;border-color:#6d6e71;}
+
+/*	=============================================================================
+   	Buttons
+   	Note: Additional selectors have been added to override global.css styles. 
+   	These will need to be removed when global.css is udpated.
+   	========================================================================== */
+
+/* Universal Definitions */
+.redButton,.blackButton,.grayButton,button.redButton,button.blackButton,button.grayButton,a.redButton,a.blackButton,a.grayButton{height:auto;font-size:14px;font-size:1.4rem;font-family:Arial,Helvetica,sans-serif;font-weight:bold;line-height:1em;cursor:pointer;text-align:center;-moz-border-radius:8px;-webkit-border-radius:8px;-o-border-radius:8px;border-radius:5px;padding:10px;white-space:nowrap;display:inline-block;}
+.redButton,.blackButton,.grayButton,.redButton:hover,.blackButton:hover,.grayButton:hover,.redButton:active,a.redButton:active,.blackButton:active,a.blackButton:active,.grayButton:active,a.grayButton:active{text-decoration:none;}
+.redButton,.blackButton,button.redButton,button.blackButton,a.redButton,a.blackButton{color:#fff;}
+/* Button Sizes */
+.redButton.btnLarge,.blackButton.btnLarge,.grayButton.btnLarge,.btnLarge,button.redButton.btnLarge,button.blackButton.btnLarge,button.grayButton.btnLarge{padding:15px;}
+.redButton.btnSpecial,.blackButton.btnSpecial,.grayButton.btnSpecial,.btnSpecial{font-family:'VerizonApexBook',Arial,Helvetica,sans-serif;font-size:18px;font-size:1.8rem;font-weight:normal;text-align:left;padding:15px 15px 30px 15px;}
+/* Red Button */
+.redButton,button.redButton,a.redButton{border:1px solid #b11f24;-webkit-box-shadow:inset 0 1px 0px 0px #df6870;-moz-box-shadow:inset 0 1px 0px 0px #df6870;-o-box-shadow:inset 0 1px 0px 0px #df6870;box-shadow:inset 0 1px 0px 0px #df6870;background:#ed1c24;background:-moz-linear-gradient(top, #ed1c24 0%, #c0171d 100%);background:-webkit-gradient(left top, left bottom, color-stop(0%, #ed1c24), color-stop(100%, #c0171d));background:-webkit-linear-gradient(top, #ed1c24 0%, #c0171d 100%);background:-o-linear-gradient(top, #ed1c24 0%, #c0171d 100%);background:-ms-linear-gradient(top, #ed1c24 0%, #c0171d 100%);background:linear-gradient(to bottom, #ed1c24 0%, #c0171d 100%);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#ed1c24', endColorstr='#c0171d', GradientType=0);}
+.redButton:active,button.redButton:active,a.redButton:active{-webkit-box-shadow:none;-moz-box-shadow:none;-o-box-shadow:none;box-shadow:none;background:#c0171d;background:-moz-linear-gradient(top, #c0171d 0%, #ed1c24 100%);background:-webkit-gradient(left top, left bottom, color-stop(0%, #c0171d), color-stop(100%, #ed1c24));background:-webkit-linear-gradient(top, #c0171d 0%, #ed1c24 100%);background:-o-linear-gradient(top, #c0171d 0%, #ed1c24 100%);background:-ms-linear-gradient(top, #c0171d 0%, #ed1c24 100%);background:linear-gradient(to bottom, #c0171d 0%, #ed1c24 100%);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#c0171d', endColorstr='#ed1c24', GradientType=0);}
+/* Black Button */
+.blackButton,button.blackButton,a.blackButton{border:1px solid #2d3033;-webkit-box-shadow:inset 0 1px 0px 0px #62666b;-moz-box-shadow:inset 0 1px 0px 0px #62666b;-o-box-shadow:inset 0 1px 0px 0px #62666b;box-shadow:inset 0 1px 0px 0px #62666b;background:#4b4f56;background:-moz-linear-gradient(top, #4b4f56 0%, #3a3d42 100%);background:-webkit-gradient(left top, left bottom, color-stop(0%, #4b4f56), color-stop(100%, #3a3d42));background:-webkit-linear-gradient(top, #4b4f56 0%, #3a3d42 100%);background:-o-linear-gradient(top, #4b4f56 0%, #3a3d42 100%);background:-ms-linear-gradient(top, #4b4f56 0%, #3a3d42 100%);background:linear-gradient(to bottom, #4b4f56 0%, #3a3d42 100%);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#4b4f56', endColorstr='#3a3d42', GradientType=0);}
+.blackButton:active,button.blackButton:active,a.blackButton:active{-webkit-box-shadow:none;-moz-box-shadow:none;-o-box-shadow:none;box-shadow:none;background:#3a3d42;background:-moz-linear-gradient(top, #3a3d42 0%, #4b4f56 100%);background:-webkit-gradient(left top, left bottom, color-stop(0%, #3a3d42), color-stop(100%, #4b4f56));background:-webkit-linear-gradient(top, #3a3d42 0%, #4b4f56 100%);background:-o-linear-gradient(top, #3a3d42 0%, #4b4f56 100%);background:-ms-linear-gradient(top, #3a3d42 0%, #4b4f56 100%);background:linear-gradient(to bottom, #3a3d42 0%, #4b4f56 100%);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#3a3d42', endColorstr='#4b4f56', GradientType=0);}
+/* Gray Button */
+.grayButton,button.grayButton,a.grayButton{color:#808080;border:1px solid #ccc;-webkit-box-shadow:inset 0 1px 0px 0px #fefefe;-moz-box-shadow:inset 0 1px 0px 0px #fefefe;-o-box-shadow:inset 0 1px 0px 0px #fefefe;box-shadow:inset 0 1px 0px 0px #fefefe;background:#f0f2f2;background:-moz-linear-gradient(top, #f0f2f2 0%, #e0e2e2 100%);background:-webkit-gradient(left top, left bottom, color-stop(0%, #f0f2f2), color-stop(100%, #e0e2e2));background:-webkit-linear-gradient(top, #f0f2f2 0%, #e0e2e2 100%);background:-o-linear-gradient(top, #f0f2f2 0%, #e0e2e2 100%);background:-ms-linear-gradient(top, #f0f2f2 0%, #e0e2e2 100%);background:linear-gradient(to bottom, #f0f2f2 0%, #e0e2e2 100%);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#f0f2f2', endColorstr='#e0e2e2', GradientType=0);}
+.grayButton:active,button.grayButton:active,a.grayButton:active{color:#333;-webkit-box-shadow:none;-moz-box-shadow:none;-o-box-shadow:none;box-shadow:none;background:#e0e2e2;background:-moz-linear-gradient(top, #e0e2e2 0%, #f0f2f2 100%);background:-webkit-gradient(left top, left bottom, color-stop(0%, #e0e2e2), color-stop(100%, #f0f2f2));background:-webkit-linear-gradient(top, #e0e2e2 0%, #f0f2f2 100%);background:-o-linear-gradient(top, #e0e2e2 0%, #f0f2f2 100%);background:-ms-linear-gradient(top, #e0e2e2 0%, #f0f2f2 100%);background:linear-gradient(to bottom, #e0e2e2 0%, #f0f2f2 100%);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e0e2e2', endColorstr='#f0f2f2', GradientType=0);}
+.grayButton:hover,button.grayButton:hover,a.grayButton:hover{color:#333;background:#e0e2e2;background:-moz-linear-gradient(top, #e0e2e2 0%, #d4d7d6 100%);background:-webkit-gradient(left top, left bottom, color-stop(0%, #e0e2e2), color-stop(100%, #d4d7d6));background:-webkit-linear-gradient(top, #e0e2e2 0%, #d4d7d6 100%);background:-o-linear-gradient(top, #e0e2e2 0%, #d4d7d6 100%);background:-ms-linear-gradient(top, #e0e2e2 0%, #d4d7d6 100%);background:linear-gradient(to bottom, #e0e2e2 0%, #d4d7d6 100%);filter: progid:DXImageTransform.Microsoft.gradient(startColorstr='#e0e2e2', endColorstr='#d4d7d6', GradientType=0);}
+/* Fix Firefox adding extra padding to Button element */
+button.redButton::-moz-focus-inner{border:0;padding:0;}
+button.blackButton::-moz-focus-inner{border:0;padding:0;}
+button.grayButton::-moz-focus-inner{border:0;padding:0;}
+
+/*	=============================================================================
+   	Text
+   	========================================================================== */
+
+/* Color */
+.whiteTxt{color:#fff;}
+.vzBlkTxt{color:#333;}
+.vzRedTxt{color:#ed1c24;}
+/* Headers (Default) */
+h1,h2,h3,h4,h5,h6{color:#333;font-weight:normal;}
+h1,h2,h3,h4{font-family:'VerizonApexMediumItalic',Arial,Helvetica,sans-serif;}
+h5{font-family:'VerizonApexMedium',Arial,Helvetica,sans-serif;font-style:normal;}
+h6{font-family:'VerizonApexBook',Arial,Helvetica,sans-serif;}
+h1{font-size:30px;font-size:3.0rem;}
+h2{font-size:25px;font-size:2.5rem;}
+h3{font-size:20px;font-size:2.0rem;}
+h4,h5,h6{font-size:15px;font-size:1.5rem;}
+.red-bg h1,.red-bg h2,.red-bg h3,.red-bg h4,.red-bg h5,.red-bg h6,.red-bg .arrwLink,.red-bg .legalDisclaimerText{color:#fff;}
+/* Headers (Promotional) */
+.promoH1 strong,.promoH2 strong,.promoH3 strong{font-family:'VerizonApexBold',Arial,Helvetica,sans-serif;font-style:normal;font-weight:normal;text-transform:uppercase;line-height:115%;}
+.promoH1{font-size:36px;font-size:3.6rem;}
+.promoH1 strong{font-size:1.5em;display:block;}
+.promoH2{font-size:30px;font-size:3.0rem;}
+.promoH3{font-size:26px;font-size:2.6rem;}
+.promoH2 strong,.promoH3 strong{font-size:1.2em;}
+/* Misc */
+.arrwLink{text-transform:uppercase;}
+.underline,a.underline,.arrwLink:hover .underline{text-decoration:underline;}
+.arrwLink .underline,.arrwLink:hover{text-decoration:none;}
+.red-bg .arrwLink .underline,.black-bg .arrwLink .underline{text-decoration:underline;}
+.arrwLink .underline{font-weight:bold;}
+sup{font-size:.5em;line-height:1em;position:relative;top:-.70em;vertical-align:baseline;}
+sub{vertical-align:baseline;line-height:1em;}
+.legalDisclaimerText{color:#666;font-size:10px;font-size:1.0rem !important;}
+.legalDisclaimerText sup{font-size:5px;font-size:0.5rem;}
+.strikethrough{text-decoration:line-through;}
+.lwrCase{text-transform:lowercase;}
+.upprCase{text-transform:uppercase;}
+/* Tagline */
+.tagline{font-family:'VerizonApexBook',Arial,Helvetica,sans-serif;font-size:18px;font-size:1.8rem;color:#333;}
+
+
+/*	=============================================================================
+   	Helper Classes
+   	========================================================================== */
+
+/* Keeps text on same line, more reliable than <br /> */
+.noWrap{white-space:nowrap;}
+/* For image replacement */
+.ir{display:block;border:0;text-indent:-999em;overflow:hidden;background-color:transparent;background-repeat:no-repeat;text-align:left;direction:ltr;*line-height:0;}
+.ir br{display:none;}
+/* Hide from both screenreaders and browsers */
+.hidden{display:none !important;visibility:hidden;}
+/* Hide only visually, but have it available for screenreaders */
+.visuallyhidden{border:0;clip:rect(0 0 0 0);height:1px;margin:-1px;overflow:hidden;padding:0;position:absolute;width:1px;}
+/* Extends the .visuallyhidden class to allow the element to be focusable when navigated to via the keyboard */
+.visuallyhidden.focusable:active,.visuallyhidden.focusable:focus{clip:auto;height:auto;margin:0;overflow:visible;position:static;width:auto;}
+/* Hide visually and from screenreaders, but maintain layout */
+.invisible{visibility:hidden;}
+/* Contain floats */
+.clearfix:before,.clearfix:after{content:"";display:table;}
+.clearfix:after{clear:both;}
+.clearfix{*zoom:1;}
+
+
+/*	=============================================================================
+   	WCMS Template Hacks/Resets
+   	========================================================================== */
+
+#bodyWrapper{width:100%;padding:0;}
+#bodyWrapper .clear10,#pageWrapper .clear10{display:none;}
+:root h1,:root h2{font-family:'VerizonApexMediumItalic',Arial,Helvetica,sans-serif;} /* CSS HACK - Overrides style set in nonStandard.css - To be removed when fixed */
+/* Fix Unordered Lists */
+ul.bulletList,.bulletList{list-style-type:disc;list-style-position:outside;padding-left:16px;margin-left:15px;}
+ul.bulletList li,.bulletList li{background:none;padding:0;margin-bottom:6px;}
